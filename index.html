@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>У маяка — Автомойка и детейлинг в Петергофе</title>
+    <meta charset="UTF-8">
+    <!-- PROTECTED: meta type -->
+    <meta name="type" value="app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="У маяка — Автомойка и детейлинг в Петергофе">
+    <meta property="og:description" content="Мойка, химчистка, полировка и защита кузова в Петергофе. Профессиональная химия, опытные мастера, цены от 550 ₽.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #080808;
+            --bg2: #0f0f0f;
+            --bg3: #161616;
+            --border: #222222;
+            --border2: #2e2b24;
+            --text: #d6d0c8;
+            --muted: #6b6560;
+            --accent: #c8a96e;
+            --accent-dark: #a88850;
+            --accent-light: #e8cfa0;
+            --white: #f5f1ea;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(8,8,8,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 48px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo i {
+            color: var(--accent);
+            font-size: 20px;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: color 0.25s;
+        }
+
+        .nav-phone:hover { color: var(--accent-light); }
+        .nav-phone i { color: var(--accent); font-size: 15px; }
+
+        /* HERO */
+        .hero-wrap {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=1800&q=80&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 40%;
+            filter: brightness(0.35);
+            transform: scale(1.03);
+            transition: transform 8s ease;
+        }
+
+        .hero-wrap:hover .hero-bg { transform: scale(1.0); }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(8,8,8,1) 0%,
+                rgba(8,8,8,0.6) 40%,
+                rgba(8,8,8,0.1) 100%
+            );
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+            padding: 0 64px 80px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .hero-line {
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .hero-eyebrow span {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(64px, 10vw, 120px);
+            font-weight: 300;
+            line-height: 1.0;
+            letter-spacing: -1px;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        h1 em {
+            font-style: italic;
+            color: var(--accent-light);
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(20px, 2.5vw, 30px);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--muted);
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--muted);
+            line-height: 1.75;
+            max-width: 540px;
+            margin-bottom: 36px;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: #080808;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 16px 34px;
+            border-radius: 2px;
+            transition: background 0.25s, transform 0.15s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 13px 32px;
+            border-radius: 2px;
+            border: 1px solid rgba(200,169,110,0.35);
+            transition: border-color 0.25s, color 0.25s, transform 0.15s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent-light); transform: translateY(-1px); }
+
+        /* STATS STRIP */
+        .stats-strip {
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: rgba(8,8,8,0.95);
+            display: flex;
+            align-items: stretch;
+        }
+
+        .stat-item {
+            flex: 1;
+            padding: 24px 32px;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .stat-item:last-child { border-right: none; }
+
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            font-weight: 300;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .stat-num span { color: var(--accent); font-size: 34px; }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* SECTION */
+        section {
+            padding: 72px 64px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1px;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 300;
+            color: var(--white);
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .section-desc {
+            font-size: 17px;
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 560px;
+            line-height: 1.75;
+            font-weight: 300;
+        }
+
+        /* DIVIDER */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .service-card {
+            background: var(--bg2);
+            padding: 28px 24px;
+            transition: background 0.25s;
+        }
+
+        .service-card:hover { background: var(--bg3); }
+
+        .service-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .service-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-icon i {
+            font-size: 18px;
+            color: var(--accent);
+        }
+
+        .service-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--white);
+            letter-spacing: 0.2px;
+        }
+
+        .service-items { list-style: none; }
+
+        .service-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(34,34,34,0.8);
+            font-size: 15px;
+            color: var(--text);
+        }
+
+        .service-items li:last-child { border-bottom: none; }
+
+        .service-items li span:first-child {
+            flex: 1;
+            color: var(--text);
+            font-weight: 300;
+        }
+
+        .price {
+            font-weight: 500;
+            color: var(--accent-light);
+            white-space: nowrap;
+            font-size: 15px;
+        }
+
+        .service-note {
+            margin-top: 14px;
+            font-size: 13px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .service-note i { color: var(--accent); font-size: 13px; flex-shrink: 0; }
+
+        /* FEATURE SECTION */
+        .feature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .feature-image {
+            position: relative;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: brightness(0.75);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .feature-image:hover img { transform: scale(1.04); filter: brightness(0.85); }
+
+        .feature-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(8,8,8,0.4) 0%, transparent 60%);
+        }
+
+        .feature-content {
+            background: var(--bg2);
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* WHY */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .why-card {
+            background: var(--bg2);
+            padding: 32px 28px;
+            transition: background 0.25s;
+        }
+
+        .why-card:hover { background: var(--bg3); }
+
+        .why-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 300;
+            color: var(--border2);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .why-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: 0.2px;
+        }
+
+        .why-card p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* PRICE NOTE */
+        .price-note-block {
+            background: var(--bg2);
+            border: 1px solid var(--border2);
+            border-left: 3px solid var(--accent);
+            padding: 24px 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .price-note-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .price-note-icon i {
+            font-size: 22px;
+            color: var(--accent);
+        }
+
+        .price-note-block h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .price-note-block p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.75;
+            font-weight: 300;
+        }
+
+        /* CTA */
+        .cta-wrap {
+            position: relative;
+            overflow: hidden;
+            margin: 0 0 96px;
+        }
+
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1800&q=80&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 60%;
+            filter: brightness(0.2);
+        }
+
+        .cta-block {
+            position: relative;
+            z-index: 1;
+            padding: 80px 64px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta-block h2 {
+            font-size: clamp(36px, 5vw, 64px);
+            margin-bottom: 14px;
+        }
+
+        .cta-block p {
+            color: var(--muted);
+            margin-bottom: 36px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 22px;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* MAP & CONTACTS */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
+            .contacts-grid { grid-template-columns: 1fr; }
+        }
+
+        .contact-card {
+            background: var(--bg2);
+            padding: 28px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: background 0.25s;
+        }
+
+        .contact-card:hover { background: var(--bg3); }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 6px;
+        }
+
+        .contact-icon i {
+            font-size: 18px;
+            color: var(--accent);
+        }
+
+        .contact-card h4 {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--muted);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .contact-card a, .contact-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--white);
+            transition: color 0.2s;
+        }
+
+        .contact-card a:hover { color: var(--accent-light); }
+
+        .contact-sub {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            color: var(--muted) !important;
+            font-weight: 300 !important;
+            margin-top: 3px;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 1px;
+        }
+
+        .footer-logo i { color: var(--accent); font-size: 18px; }
+
+        /* TABLET — до 1100px */
+        @media (max-width: 1100px) {
+            nav { padding: 0 32px; height: 64px; }
+            .hero { padding: 0 40px 56px; }
+            section { padding: 56px 40px; }
+            .stat-item { padding: 20px 24px; }
+            .feature-section { gap: 0; }
+        }
+
+        /* TABLET SMALL — до 900px */
+        @media (max-width: 900px) {
+            nav { padding: 0 24px; height: 60px; }
+            .nav-logo { font-size: 22px; }
+            section { padding: 48px 32px; }
+            .feature-section { grid-template-columns: 1fr; }
+            .feature-image { min-height: 320px; order: -1; }
+            .feature-content { padding: 36px 32px; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* MOBILE — до 768px */
+        @media (max-width: 768px) {
+            nav { padding: 0 18px; height: 58px; }
+            .nav-logo { font-size: 20px; }
+            .nav-logo i { font-size: 16px; }
+            .nav-phone { font-size: 15px; }
+
+            .hero { padding: 0 20px 52px; }
+            h1 { font-size: clamp(48px, 13vw, 80px); }
+            .hero-tagline { font-size: clamp(18px, 4.5vw, 24px); }
+            .hero-sub { font-size: 16px; max-width: 100%; }
+            .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+            .btn-primary { width: 100%; justify-content: center; font-size: 15px; padding: 17px 32px; }
+            .btn-secondary { width: 100%; justify-content: center; font-size: 15px; }
+
+            section { padding: 44px 18px; }
+            h2 { font-size: clamp(32px, 9vw, 48px); }
+            .section-desc { max-width: 100%; font-size: 16px; }
+
+            .stats-strip { flex-wrap: wrap; }
+            .stat-item { flex: 1 1 50%; border-bottom: 1px solid var(--border); padding: 20px 18px; }
+            .stat-num { font-size: 36px; }
+            .stat-num span { font-size: 28px; }
+            .stat-label { font-size: 12px; }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 24px 18px; }
+            .service-card-title { font-size: 20px; }
+            .service-items li { font-size: 15px; padding: 12px 0; }
+            .price { font-size: 15px; }
+            .service-note { font-size: 13px; }
+
+            .feature-section { grid-template-columns: 1fr; }
+            .feature-image { min-height: 260px; }
+            .feature-content { padding: 30px 20px; }
+
+            .why-grid { grid-template-columns: 1fr; }
+            .why-card { padding: 26px 20px; }
+            .why-card h3 { font-size: 20px; }
+            .why-card p { font-size: 15px; }
+            .price-note-block { flex-direction: column; gap: 12px; padding: 22px 18px; }
+            .price-note-block h3 { font-size: 20px; }
+            .price-note-block p { font-size: 15px; }
+
+            .cta-block { padding: 60px 20px; }
+            .cta-block p { font-size: 19px; }
+            .cta-actions { flex-direction: column; align-items: center; gap: 12px; }
+            .cta-actions .btn-primary,
+            .cta-actions .btn-secondary { width: 100%; max-width: 380px; justify-content: center; }
+
+            .contacts-grid { grid-template-columns: 1fr; }
+            .contact-card { padding: 24px 18px; }
+            .contact-card a, .contact-card p { font-size: 21px; }
+            .contact-sub { font-size: 14px !important; }
+
+            footer { padding: 24px 18px; flex-direction: column; align-items: flex-start; gap: 8px; }
+            footer p { font-size: 14px; }
+        }
+
+        /* SMALL MOBILE — до 430px */
+        @media (max-width: 430px) {
+            nav { padding: 0 16px; }
+            .nav-logo { font-size: 19px; }
+            .nav-phone span { display: none; }
+
+            h1 { font-size: clamp(42px, 14vw, 64px); }
+            h2 { font-size: clamp(28px, 9vw, 40px); }
+            .hero-tagline { font-size: clamp(17px, 5vw, 22px); }
+            .hero-sub { font-size: 15px; }
+
+            .stat-num { font-size: 30px; }
+            .stat-num span { font-size: 24px; }
+
+            .service-card-title { font-size: 19px; }
+            .service-items li { font-size: 14px; }
+            .price { font-size: 14px; }
+
+            .contact-card a, .contact-card p { font-size: 19px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">
+            <i class="fa-solid fa-lighthouse"></i>
+            У маяка
+        </div>
+        <a class="nav-phone" href="tel:+79675626368">
+            <i class="fa-solid fa-phone"></i>
+            +7 967 562-63-68
+        </a>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero-wrap">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero">
+            <div class="hero-eyebrow">
+                <div class="hero-line"></div>
+                <span>Петергоф — Ораниенбаумское шоссе, 2А</span>
+            </div>
+            <h1>У<br><em>маяка</em></h1>
+            <p class="hero-tagline">Автомойка и детейлинг премиального уровня</p>
+            <p class="hero-sub">
+                Мойка, химчистка, полировка и защита кузова. Профессиональная химия, опытные мастера, безупречное внимание к деталям.
+            </p>
+            <div class="hero-actions">
+                <a class="btn-primary" href="tel:+79675626368">
+                    <i class="fa-solid fa-phone"></i>
+                    Позвонить
+                </a>
+                <a class="btn-secondary" href="https://yandex.ru/maps/org/u_mayaka/1705151188/?ll=29.863007%2C59.889938&z=16" target="_blank">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Найти на карте
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+        <div class="stat-item">
+            <div class="stat-num">550<span>₽</span></div>
+            <div class="stat-label">Цена от</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">9H</div>
+            <div class="stat-label">Керамика</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">4<span>+</span></div>
+            <div class="stat-label">Направления</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">24<span>/7</span></div>
+            <div class="stat-label">Запись</div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-label">Услуги и цены</div>
+        <h2>Что мы делаем</h2>
+        <p class="section-desc">Актуальные цены — цена зависит от состояния и класса авто. Уточняйте по телефону.</p>
+
+        <div class="services-grid">
+
+            <!-- Мойка -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="service-card-title">Мойка</div>
+                </div>
+                <ul class="service-items">
+                    <li>
+                        <span>Техническая мойка</span>
+                        <span class="price">550 ₽</span>
+                    </li>
+                    <li>
+                        <span>Стандартная мойка</span>
+                        <span class="price">850 ₽</span>
+                    </li>
+                    <li>
+                        <span>Мойка люкс <small style="color:var(--muted);font-weight:400;">~1 час</small></span>
+                        <span class="price">1 950 ₽</span>
+                    </li>
+                    <li>
+                        <span>Чистка дисков</span>
+                        <span class="price">1 500 ₽</span>
+                    </li>
+                    <li>
+                        <span>Чистка кузова</span>
+                        <span class="price">3 000 ₽</span>
+                    </li>
+                </ul>
+                <div class="service-note">
+                    <i class="fa-solid fa-truck"></i>
+                    Моем грузовой транспорт и спецтехнику
+                </div>
+            </div>
+
+            <!-- Детейлинг -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-icon"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div class="service-card-title">Детейлинг и защита кузова</div>
+                </div>
+                <ul class="service-items">
+                    <li>
+                        <span>Обезжиривание кузова</span>
+                        <span class="price">500 ₽</span>
+                    </li>
+                    <li>
+                        <span>Нанесение воска</span>
+                        <span class="price">500 ₽</span>
+                    </li>
+                    <li>
+                        <span>Быстрая керамика</span>
+                        <span class="price">3 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Полировка кузова</span>
+                        <span class="price">10 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Керамика 9H (1 слой)</span>
+                        <span class="price">9 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Анти-дождь</span>
+                        <span class="price">1 500 ₽</span>
+                    </li>
+                </ul>
+                <div class="service-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Также: кварц, защитная плёнка, удаление битума и ржавчины
+                </div>
+            </div>
+
+            <!-- Салон -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-icon"><i class="fa-solid fa-car-side"></i></div>
+                    <div class="service-card-title">Уход за салоном</div>
+                </div>
+                <ul class="service-items">
+                    <li>
+                        <span>Химчистка салона</span>
+                        <span class="price">12 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Покрытие кожи керамикой</span>
+                        <span class="price">4 000 ₽</span>
+                    </li>
+                </ul>
+                <div class="service-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Удаление пятен, запахов, шерсти, чистка пластика
+                </div>
+            </div>
+
+            <!-- Шиномонтаж -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-icon"><i class="fa-solid fa-circle-dot"></i></div>
+                    <div class="service-card-title">Шиномонтаж и хранение</div>
+                </div>
+                <ul class="service-items">
+                    <li>
+                        <span>Шиномонтаж</span>
+                        <span class="price">2 300 ₽</span>
+                    </li>
+                    <li>
+                        <span>Ремонт колеса</span>
+                        <span class="price">700 ₽</span>
+                    </li>
+                    <li>
+                        <span>Хранение резины</span>
+                        <span class="price">2 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Заправка кондиционера</span>
+                        <span class="price">по запросу</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 1px;">
+            <div class="price-note-block">
+                <div class="price-note-icon"><i class="fa-solid fa-sliders"></i></div>
+                <div>
+                    <h3>Цена зависит от автомобиля</h3>
+                    <p>Стоимость определяется состоянием кузова, классом авто и выбранным комплексом. Подберём вариант под ваш бюджет — от эконом до премиум. Позвоните или приезжайте — оценим сразу.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- FEATURE -->
+    <section style="padding: 96px 64px; max-width: 1200px; margin: 0 auto;">
+        <div class="feature-section">
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop" alt="Детейлинг автомобиля">
+                <div class="feature-image-overlay"></div>
+            </div>
+            <div class="feature-content">
+                <div class="section-label" style="margin-bottom: 20px;">Наш подход</div>
+                <h2 style="margin-bottom: 20px;">Каждый<br>автомобиль —<br><em style="font-style:italic; color: var(--accent-light);">особый</em></h2>
+                <p style="font-size: 17px; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 28px;">
+                    Мы не работаем на поток. Каждый автомобиль получает индивидуальную оценку состояния, подбор профессиональной химии и внимательный уход от начала до конца.
+                </p>
+                <a class="btn-primary" href="tel:+79675626368" style="align-self: flex-start;">
+                    <i class="fa-solid fa-phone"></i>
+                    Записаться
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- WHY -->
+    <section id="why">
+        <div class="section-label">Почему нас выбирают</div>
+        <h2>Стандарт<br>качества</h2>
+        <p class="section-desc">Без громких обещаний — только результат и забота о вашем автомобиле.</p>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-number">01</div>
+                <h3>Профессиональная химия</h3>
+                <p>Используем сертифицированные составы и оборудование — не эконом-продукты из автомагазина.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">02</div>
+                <h3>Индивидуальный подход</h3>
+                <p>Подбираем средства под тип, цвет и состояние вашего автомобиля.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">03</div>
+                <h3>Комфортная зона ожидания</h3>
+                <p>Диван, телевизор, кофе. Ждать — не скучно.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">04</div>
+                <h3>Удобное расположение</h3>
+                <p>Ораниенбаумское шоссе, 2А — въезд в Петергоф. Легко найти, есть парковка.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SECOND FEATURE -->
+    <section style="padding: 96px 64px; max-width: 1200px; margin: 0 auto;">
+        <div class="feature-section">
+            <div class="feature-content">
+                <div class="section-label" style="margin-bottom: 20px;">Защита кузова</div>
+                <h2 style="margin-bottom: 20px;"><em style="font-style:italic; color: var(--accent-light);">Керамика</em><br>и полировка</h2>
+                <p style="font-size: 17px; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 28px;">
+                    Нанокерамика 9H защищает лакокрасочное покрытие от царапин, ультрафиолета и загрязнений. Глянцевый блеск — на годы вперёд.
+                </p>
+                <a class="btn-secondary" href="#services" style="align-self: flex-start;">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    Смотреть цены
+                </a>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=900&q=80&auto=format&fit=crop" alt="Полировка автомобиля">
+                <div class="feature-image-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CONTACTS -->
+    <section id="contacts">
+        <div class="section-label">Контакты</div>
+        <h2>Приезжайте или звоните</h2>
+        <p class="section-desc">Мы рядом — найти нас легко.</p>
+
+        <div class="contacts-grid">
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                    <h4>Телефон</h4>
+                    <a href="tel:+79675626368">+7 967 562-63-68</a>
+                    <p class="contact-sub">Звоните, ответим на вопросы</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                    <h4>Адрес</h4>
+                    <a href="https://yandex.ru/maps/org/u_mayaka/1705151188/?ll=29.863007%2C59.889938&z=16" target="_blank">Ораниенбаумское ш., 2А</a>
+                    <p class="contact-sub">Петергоф — въезд в город</p>
+                </div>
+            </div>
+            <div class="contact-card" style="grid-column: 1 / -1;">
+                <div class="contact-icon"><i class="fa-solid fa-map"></i></div>
+                <div>
+                    <h4>На карте</h4>
+                    <a href="https://yandex.ru/maps/org/u_mayaka/1705151188/?ll=29.863007%2C59.889938&z=16" target="_blank">Открыть в Яндекс Картах →</a>
+                    <p class="contact-sub">Нас легко найти с трассы — смотрите ориентир на карте</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-wrap">
+        <div class="cta-bg"></div>
+        <div class="cta-block">
+            <h2>Запишитесь<br>или просто приезжайте</h2>
+            <p>Оценим состояние авто и подберём нужные услуги на месте</p>
+            <div class="cta-actions">
+                <a class="btn-primary" href="tel:+79675626368">
+                    <i class="fa-solid fa-phone"></i>
+                    Позвонить
+                </a>
+                <a class="btn-secondary" href="https://yandex.ru/maps/org/u_mayaka/1705151188/?ll=29.863007%2C59.889938&z=16" target="_blank">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Найти на карте
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">
+            <i class="fa-solid fa-lighthouse"></i>
+            У маяка
+        </div>
+        <p>Ораниенбаумское шоссе, 2А, Петергоф</p>
+        <p>+7 967 562-63-68</p>
+    </footer>
+
+</body>
+</html>
