@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>У маяка — Автомойка и детейлинг в Петергофе</title>
+    <meta charset="UTF-8">
+    <!-- PROTECTED: meta type -->
+    <meta name="type" value="app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="У маяка — Автомойка и детейлинг в Петергофе">
+    <meta property="og:description" content="Мойка, химчистка, полировка и защита кузова в Петергофе. Профессиональная химия, опытные мастера, цены от 550 ₽.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #080808;
+            --bg2: #101010;
+            --bg3: #181818;
+            --border: #252525;
+            --border2: #333;
+            --text: #f0ebe2;
+            --muted: #9a9188;
+            --accent: #c8a96e;
+            --accent-dark: #a88850;
+            --accent-light: #e8cfa0;
+            --white: #faf6ef;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(8,8,8,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--border);
+            padding: 0 48px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo i { color: var(--accent); font-size: 22px; }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        .nav-phone:hover { color: var(--accent-light); }
+        .nav-phone i { color: var(--accent); font-size: 16px; }
+
+        /* HERO */
+        .hero-wrap {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=1800&q=80&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 40%;
+            filter: brightness(0.28);
+            transform: scale(1.03);
+            transition: transform 8s ease;
+        }
+
+        .hero-wrap:hover .hero-bg { transform: scale(1.0); }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(8,8,8,1) 0%,
+                rgba(8,8,8,0.65) 45%,
+                rgba(8,8,8,0.05) 100%
+            );
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+            padding: 0 64px 96px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(200,169,110,0.12);
+            border: 1px solid rgba(200,169,110,0.3);
+            padding: 8px 18px;
+            margin-bottom: 32px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .hero-location i { font-size: 12px; }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(72px, 11vw, 140px);
+            font-weight: 700;
+            line-height: 0.92;
+            letter-spacing: -1px;
+            color: var(--white);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 em {
+            font-style: normal;
+            color: var(--accent);
+        }
+
+        .hero-tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(17px, 2vw, 22px);
+            font-weight: 600;
+            color: var(--muted);
+            margin-bottom: 28px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: var(--text);
+            line-height: 1.7;
+            max-width: 560px;
+            margin-bottom: 44px;
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent);
+            color: #060606;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 18px 40px;
+            border-radius: 0;
+            transition: background 0.2s, transform 0.15s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 17px 38px;
+            border-radius: 0;
+            border: 2px solid rgba(200,169,110,0.4);
+            transition: border-color 0.2s, color 0.2s, transform 0.15s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent-light); transform: translateY(-2px); }
+
+        /* SECTION */
+        section {
+            padding: 80px 64px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(42px, 6vw, 80px);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            line-height: 1.0;
+        }
+
+        h2 em {
+            font-style: normal;
+            color: var(--accent);
+        }
+
+        .section-desc {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 48px;
+            max-width: 560px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* DIVIDER */
+        .divider {
+            border: none;
+            border-top: 2px solid var(--border);
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px;
+            background: var(--border);
+            border: 2px solid var(--border);
+        }
+
+        .service-card {
+            background: var(--bg2);
+            padding: 32px 28px;
+            transition: background 0.2s;
+        }
+
+        .service-card:hover { background: var(--bg3); }
+
+        .service-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .service-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: rgba(200,169,110,0.1);
+        }
+
+        .service-icon i {
+            font-size: 18px;
+            color: var(--accent);
+        }
+
+        .service-card-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .service-items { list-style: none; }
+
+        .service-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 16px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .service-items li:last-child { border-bottom: none; }
+
+        .service-items li span:first-child {
+            flex: 1;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .price {
+            font-weight: 800;
+            color: var(--accent-light);
+            white-space: nowrap;
+            font-size: 16px;
+        }
+
+        .service-note {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        .service-note i { color: var(--accent); font-size: 14px; flex-shrink: 0; }
+
+        /* FEATURE SECTION */
+        .feature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 2px solid var(--border);
+            overflow: hidden;
+        }
+
+        .feature-image {
+            position: relative;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: brightness(0.7);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .feature-image:hover img { transform: scale(1.04); filter: brightness(0.82); }
+
+        .feature-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(8,8,8,0.5) 0%, transparent 60%);
+        }
+
+        .feature-content {
+            background: var(--bg2);
+            padding: 56px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* WHY */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2px;
+            background: var(--border);
+            border: 2px solid var(--border);
+        }
+
+        .why-card {
+            background: var(--bg2);
+            padding: 36px 32px;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+
+        .why-card:hover {
+            background: var(--bg3);
+            border-left-color: var(--accent);
+        }
+
+        .why-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--border2);
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+
+        .why-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .why-card p {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        /* PRICE NOTE */
+        .price-note-block {
+            background: var(--bg2);
+            border: 2px solid var(--border2);
+            border-left: 5px solid var(--accent);
+            padding: 28px 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .price-note-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .price-note-icon i {
+            font-size: 24px;
+            color: var(--accent);
+        }
+
+        .price-note-block h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-note-block p {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* CTA */
+        .cta-wrap {
+            position: relative;
+            overflow: hidden;
+            margin: 0 0 80px;
+        }
+
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1800&q=80&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 60%;
+            filter: brightness(0.15);
+        }
+
+        .cta-block {
+            position: relative;
+            z-index: 1;
+            padding: 100px 64px;
+            text-align: center;
+            border-top: 2px solid var(--border);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .cta-block h2 {
+            font-size: clamp(40px, 6vw, 80px);
+            margin-bottom: 16px;
+        }
+
+        .cta-block p {
+            color: var(--muted);
+            margin-bottom: 44px;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* CONTACTS */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--border);
+            border: 2px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
+            .contacts-grid { grid-template-columns: 1fr; }
+        }
+
+        .contact-card {
+            background: var(--bg2);
+            padding: 32px 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: background 0.2s;
+        }
+
+        .contact-card:hover { background: var(--bg3); }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: rgba(200,169,110,0.1);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .contact-icon i {
+            font-size: 18px;
+            color: var(--accent);
+        }
+
+        .contact-card h4 {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+        }
+
+        .contact-card a, .contact-card p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--white);
+            transition: color 0.2s;
+        }
+
+        .contact-card a:hover { color: var(--accent-light); }
+
+        .contact-sub {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            color: var(--muted) !important;
+            font-weight: 500 !important;
+            margin-top: 4px;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 2px solid var(--border);
+            padding: 32px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer p {
+            font-size: 15px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-logo i { color: var(--accent); font-size: 20px; }
+
+        /* TABLET */
+        @media (max-width: 1100px) {
+            nav { padding: 0 32px; height: 66px; }
+            .hero { padding: 0 40px 72px; }
+            section { padding: 64px 40px; }
+        }
+
+        /* TABLET SMALL */
+        @media (max-width: 900px) {
+            nav { padding: 0 24px; height: 62px; }
+            .nav-logo { font-size: 22px; }
+            section { padding: 52px 32px; }
+            .feature-section { grid-template-columns: 1fr; }
+            .feature-image { min-height: 320px; order: -1; }
+            .feature-content { padding: 40px 32px; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            nav { padding: 0 18px; height: 60px; }
+            .nav-logo { font-size: 20px; }
+            .nav-phone { font-size: 16px; }
+
+            .hero { padding: 0 20px 60px; }
+            h1 { font-size: clamp(52px, 14vw, 90px); }
+            .hero-tagline { font-size: clamp(12px, 3.5vw, 16px); }
+            .hero-sub { font-size: 17px; max-width: 100%; }
+            .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+            .btn-primary { width: 100%; justify-content: center; }
+            .btn-secondary { width: 100%; justify-content: center; }
+
+            section { padding: 48px 18px; }
+            h2 { font-size: clamp(34px, 10vw, 56px); }
+            .section-desc { max-width: 100%; font-size: 17px; }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 26px 20px; }
+            .service-card-title { font-size: 20px; }
+            .service-items li { font-size: 15px; padding: 12px 0; }
+            .price { font-size: 15px; }
+
+            .feature-section { grid-template-columns: 1fr; }
+            .feature-image { min-height: 260px; }
+            .feature-content { padding: 32px 22px; }
+
+            .why-grid { grid-template-columns: 1fr; }
+            .why-card { padding: 28px 22px; }
+            .why-card h3 { font-size: 20px; }
+            .why-card p { font-size: 15px; }
+            .price-note-block { flex-direction: column; gap: 14px; padding: 24px 20px; }
+            .price-note-block h3 { font-size: 21px; }
+
+            .cta-block { padding: 72px 20px; }
+            .cta-block p { font-size: 16px; }
+            .cta-actions { flex-direction: column; align-items: center; gap: 12px; }
+            .cta-actions .btn-primary,
+            .cta-actions .btn-secondary { width: 100%; max-width: 380px; justify-content: center; }
+
+            .contacts-grid { grid-template-columns: 1fr; }
+            .contact-card { padding: 26px 20px; }
+            .contact-card a, .contact-card p { font-size: 22px; }
+
+            footer { padding: 28px 18px; flex-direction: column; align-items: flex-start; gap: 8px; }
+        }
+
+        /* SMALL MOBILE */
+        @media (max-width: 430px) {
+            nav { padding: 0 16px; }
+            .nav-logo { font-size: 18px; }
+            .nav-phone span { display: none; }
+
+            h1 { font-size: clamp(44px, 15vw, 70px); }
+            h2 { font-size: clamp(30px, 10vw, 44px); }
+            .hero-sub { font-size: 16px; }
+
+            .contact-card a, .contact-card p { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">
+            <i class="fa-solid fa-lighthouse"></i>
+            У маяка
+        </div>
+        <a class="nav-phone" href="tel:+79675626368">
+            <i class="fa-solid fa-phone"></i>
+            +7 967 562-63-68
+        </a>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero-wrap">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero">
+            <div class="hero-location">
+                <i class="fa-solid fa-location-dot"></i>
+                Петергоф, Ораниенбаумское шоссе 2А
+            </div>
+            <h1>У<br><em>маяка</em></h1>
+            <p class="hero-tagline">Автомойка и детейлинг в Петергофе</p>
+            <p class="hero-sub">
+                Мойка, химчистка, полировка и защита кузова. Профессиональная химия, опытные мастера, безупречное внимание к деталям.
+            </p>
+            <div class="hero-actions">
+                <a class="btn-primary" href="tel:+79675626368">
+                    <i class="fa-solid fa-phone"></i>
+                    Позвонить
+                </a>
+                <a class="btn-secondary" href="https://yandex.ru/maps/org/u_mayaka/1705151188/?ll=29.863007%2C59.889938&z=16" target="_blank">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Найти на карте
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-label">Услуги и цены</div>
+        <h2>Что мы делаем</h2>
+        
+
+        <div class="services-grid">
+
+            <!-- Мойка -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="service-card-title">Мойка</div>
+                </div>
+                <ul class="service-items">
+                    <li>
+                        <span>Техническая мойка</span>
+                        <span class="price">от 550 ₽</span>
+                    </li>
+                    <li>
+                        <span>Стандартная мойка</span>
+                        <span class="price">от 850 ₽</span>
+                    </li>
+                    <li>
+                        <span>Мойка люкс <small style="color:var(--muted);font-weight:500;">~1 час</small></span>
+                        <span class="price">от 1 950 ₽</span>
+                    </li>
+                    <li>
+                        <span>Чистка дисков</span>
+                        <span class="price">от 1 500 ₽</span>
+                    </li>
+                    <li>
+                        <span>Чистка кузова</span>
+                        <span class="price">от 3 000 ₽</span>
+                    </li>
+                </ul>
+                <div class="service-note">
+                    <i class="fa-solid fa-truck"></i>
+                    Моем грузовой транспорт и спецтехнику
+                </div>
+            </div>
+
+            <!-- Детейлинг -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-icon"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div class="service-card-title">Детейлинг и защита</div>
+                </div>
+                <ul class="service-items">
+                    <li>
+                        <span>Обезжиривание кузова</span>
+                        <span class="price">от 500 ₽</span>
+                    </li>
+                    <li>
+                        <span>Нанесение воска</span>
+                        <span class="price">от 500 ₽</span>
+                    </li>
+                    <li>
+                        <span>Быстрая керамика</span>
+                        <span class="price">от 3 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Полировка кузова</span>
+                        <span class="price">от 10 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Керамика 9H (1 слой)</span>
+                        <span class="price">от 9 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Анти-дождь</span>
+                        <span class="price">от 1 500 ₽</span>
+                    </li>
+                </ul>
+                <div class="service-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Кварц, защитная плёнка, удаление битума и ржавчины
+                </div>
+            </div>
+
+            <!-- Салон -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-icon"><i class="fa-solid fa-car-side"></i></div>
+                    <div class="service-card-title">Уход за салоном</div>
+                </div>
+                <ul class="service-items">
+                    <li>
+                        <span>Химчистка салона</span>
+                        <span class="price">от 12 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Покрытие кожи керамикой</span>
+                        <span class="price">от 4 000 ₽</span>
+                    </li>
+                </ul>
+                <div class="service-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Удаление пятен, запахов, шерсти, чистка пластика
+                </div>
+            </div>
+
+            <!-- Шиномонтаж -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-icon"><i class="fa-solid fa-circle-dot"></i></div>
+                    <div class="service-card-title">Шиномонтаж и хранение</div>
+                </div>
+                <ul class="service-items">
+                    <li>
+                        <span>Шиномонтаж</span>
+                        <span class="price">от 2 300 ₽</span>
+                    </li>
+                    <li>
+                        <span>Ремонт колеса</span>
+                        <span class="price">от 700 ₽</span>
+                    </li>
+                    <li>
+                        <span>Хранение резины</span>
+                        <span class="price">от 2 000 ₽</span>
+                    </li>
+                    <li>
+                        <span>Заправка кондиционера</span>
+                        <span class="price">по запросу</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 2px;">
+            <div class="price-note-block">
+                <div class="price-note-icon"><i class="fa-solid fa-sliders"></i></div>
+                <div>
+                    <h3>Цена зависит от автомобиля</h3>
+                    <p>Стоимость определяется состоянием кузова, классом авто и выбранным комплексом. Подберём вариант под ваш бюджет. Позвоните или приезжайте, оценим сразу.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- FEATURE -->
+    <section style="padding: 96px 64px; max-width: 1200px; margin: 0 auto;">
+        <div class="feature-section">
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop" alt="Детейлинг автомобиля">
+                <div class="feature-image-overlay"></div>
+            </div>
+            <div class="feature-content">
+                <div class="section-label" style="margin-bottom: 16px;">Наш подход</div>
+                <h2 style="margin-bottom: 20px;">Каждый<br>автомобиль<br><em>особый</em></h2>
+                <p style="font-size: 17px; color: var(--muted); line-height: 1.75; font-weight: 500; margin-bottom: 32px;">
+                    Мы не работаем на поток. Каждый автомобиль получает индивидуальную оценку состояния, подбор профессиональной химии и внимательный уход от начала до конца.
+                </p>
+                <a class="btn-primary" href="tel:+79675626368" style="align-self: flex-start;">
+                    <i class="fa-solid fa-phone"></i>
+                    Записаться
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- WHY -->
+    <section id="why">
+        <div class="section-label">Почему нас выбирают</div>
+        <h2>Стандарт<br>качества</h2>
+        <p class="section-desc">Никаких громких обещаний. Только результат и забота о вашем автомобиле.</p>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-number">01</div>
+                <h3>Профессиональная химия</h3>
+                <p>Используем сертифицированные составы и оборудование, а не эконом-продукты из автомагазина.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">02</div>
+                <h3>Индивидуальный подход</h3>
+                <p>Подбираем средства под тип, цвет и состояние вашего автомобиля.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">03</div>
+                <h3>Зона ожидания</h3>
+                <p>Диван, телевизор, кофе. Ждать приятно.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">04</div>
+                <h3>Удобное расположение</h3>
+                <p>Ораниенбаумское шоссе 2А, въезд в Петергоф. Легко найти, есть парковка.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SECOND FEATURE -->
+    <section style="padding: 96px 64px; max-width: 1200px; margin: 0 auto;">
+        <div class="feature-section">
+            <div class="feature-content">
+                <div class="section-label" style="margin-bottom: 16px;">Защита кузова</div>
+                <h2 style="margin-bottom: 20px;"><em>Керамика</em><br>и полировка</h2>
+                <p style="font-size: 17px; color: var(--muted); line-height: 1.75; font-weight: 500; margin-bottom: 32px;">
+                    Нанокерамика 9H защищает лакокрасочное покрытие от царапин, ультрафиолета и загрязнений. Глянцевый блеск на годы вперёд.
+                </p>
+                <a class="btn-secondary" href="#services" style="align-self: flex-start;">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    Смотреть цены
+                </a>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=900&q=80&auto=format&fit=crop" alt="Полировка автомобиля">
+                <div class="feature-image-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CONTACTS -->
+    <section id="contacts">
+        <div class="section-label">Контакты</div>
+        <h2>Приезжайте или звоните</h2>
+        <p class="section-desc">Мы рядом. Найти нас легко.</p>
+
+        <div class="contacts-grid">
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                    <h4>Телефон</h4>
+                    <a href="tel:+79675626368">+7 967 562-63-68</a>
+                    <p class="contact-sub">Звоните, ответим на вопросы</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                    <h4>Адрес</h4>
+                    <a href="https://yandex.ru/maps/org/u_mayaka/1705151188/?ll=29.863007%2C59.889938&z=16" target="_blank">Ораниенбаумское ш., 2А</a>
+                    <p class="contact-sub">Петергоф, въезд в город</p>
+                </div>
+            </div>
+            <div class="contact-card" style="grid-column: 1 / -1;">
+                <div class="contact-icon"><i class="fa-solid fa-map"></i></div>
+                <div>
+                    <h4>На карте</h4>
+                    <a href="https://yandex.ru/maps/org/u_mayaka/1705151188/?ll=29.863007%2C59.889938&z=16" target="_blank">Открыть в Яндекс Картах</a>
+                    <p class="contact-sub">Нас легко найти с трассы. Смотрите ориентир на карте.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-wrap">
+        <div class="cta-bg"></div>
+        <div class="cta-block">
+            <h2>Запишитесь<br>или просто приезжайте</h2>
+            <p>Оценим состояние авто и подберём нужные услуги</p>
+            <div class="cta-actions">
+                <a class="btn-primary" href="tel:+79675626368">
+                    <i class="fa-solid fa-phone"></i>
+                    Позвонить
+                </a>
+                <a class="btn-secondary" href="https://yandex.ru/maps/org/u_mayaka/1705151188/?ll=29.863007%2C59.889938&z=16" target="_blank">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Найти на карте
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">
+            <i class="fa-solid fa-lighthouse"></i>
+            У маяка
+        </div>
+        <p>Ораниенбаумское шоссе 2А, Петергоф</p>
+        <p>+7 967 562-63-68</p>
+    </footer>
+
+</body>
+</html>
